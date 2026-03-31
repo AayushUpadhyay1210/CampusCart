@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Listings — CampusCart</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="toast"></div>
+
+  
+  <nav id="navAuth"></nav>
+
+  
+  <section>
+    <div class="my-listings-wrap">
+
+      <h1 class="page-title">My Listings</h1>
+      <p class="page-sub">Manage everything you have posted for sale</p>
+
+      
+      <div style="display:flex;gap:0.75rem;align-items:center;margin-bottom:1.5rem;flex-wrap:wrap;">
+
+        
+        <select id="statusFilter" onchange="filterMyListings()" style="width:auto;min-width:160px;">
+          <option value="all">All items</option>
+          <option value="active">Active only</option>
+          <option value="sold">Sold only</option>
+        </select>
+
+        <a class="btn btn-primary btn-sm" href="post.html">+ Post new item</a>
+      </div>
+
+      
+      <div id="myListingsContent"></div>
+
+    </div>
+  </section>
+
+  
+  <footer>
+    <div class="container">
+      <p>CampusCart &copy; 2024</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/mylistings.js"></script>
+  <script>
+    
+    window.addEventListener("load", function() {
+      initMyListings();
+    });
+  </script>
+
+</body>
+</html>

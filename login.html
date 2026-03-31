@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login — CampusCart</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="toast"></div>
+
+  
+  <nav>
+    <a class="nav-logo" href="index.html">Campus<span>Cart</span></a>
+    <div class="nav-links">
+      <a class="nav-btn" href="browse.html">Browse</a>
+      <a class="nav-cta" href="signup.html">Sign up free</a>
+    </div>
+  </nav>
+
+  <div class="auth-wrap">
+    <div class="auth-box">
+      <div class="auth-title">Welcome back</div>
+      <div class="auth-sub">Log in to your CampusCart account</div>
+
+      <div id="loginAlert"></div>
+
+      
+      <div class="form-group">
+        <label for="li-email">Email</label>
+        <input type="email" id="li-email" name="email" placeholder="you@college.edu.in">
+      </div>
+      <div class="form-group">
+        <label for="li-pass">Password</label>
+        <input type="password" id="li-pass" name="password" placeholder="Your password">
+      </div>
+
+      
+      <div class="inline-check" style="margin-bottom:1rem">
+        <input type="checkbox" id="li-remember" name="remember">
+        <label for="li-remember" style="text-transform:none;letter-spacing:0;margin:0;color:var(--muted)">
+          Remember me
+        </label>
+      </div>
+
+      <button class="btn btn-primary btn-full" onclick="doLogin()">Log in</button>
+
+      <hr class="divider">
+
+      
+      <button class="btn btn-secondary btn-full" onclick="quickDemo()" style="font-size:0.85rem">
+        &#9889; Quick demo login
+      </button>
+
+      <div class="auth-switch">
+        New here? <a href="signup.html">Create an account</a>
+      </div>
+    </div>
+  </div>
+
+  
+  <footer>
+    <div class="container">
+      <p>CampusCart &copy; 2024</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    checkAlreadyLoggedIn();
+    
+    document.getElementById("li-email").onmouseover = function() { this.style.borderColor = "#c8f135"; };
+    document.getElementById("li-email").onmouseout  = function() { if (document.activeElement != this) this.style.borderColor = ""; };
+    document.getElementById("li-pass").onmouseover  = function() { this.style.borderColor = "#c8f135"; };
+    document.getElementById("li-pass").onmouseout   = function() { if (document.activeElement != this) this.style.borderColor = ""; };
+  </script>
+
+</body>
+</html>

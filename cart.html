@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart — CampusCart</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="toast"></div>
+
+  
+  <nav id="navAuth"></nav>
+
+  
+  <div id="checkoutModal" style="display:none;background-color:rgba(0,0,0,0.75);
+       padding:2rem;z-index:200;width:100%;min-height:200px;
+       display:none;align-items:center;justify-content:center;">
+    <div class="modal-box">
+      <div class="modal-title">&#127881; Order Placed!</div>
+      <p class="text-muted mb-3">
+        Your request has been sent to the sellers.
+        They will contact you via your campus email within 24 hours.
+      </p>
+
+      
+      <fieldset>
+        <legend>Delivery Preference</legend>
+
+        
+        <div class="inline-check">
+          <input type="radio" id="del-pickup" name="delivery" value="Campus pickup" checked>
+          <label for="del-pickup" style="text-transform:none;letter-spacing:0;margin:0;color:var(--text)">
+            Campus pickup
+          </label>
+        </div>
+        <div class="inline-check">
+          <input type="radio" id="del-hostel" name="delivery" value="Hostel drop">
+          <label for="del-hostel" style="text-transform:none;letter-spacing:0;margin:0;color:var(--text)">
+            Hostel drop
+          </label>
+        </div>
+        <div class="inline-check">
+          <input type="radio" id="del-dept" name="delivery" value="Department gate">
+          <label for="del-dept" style="text-transform:none;letter-spacing:0;margin:0;color:var(--text)">
+            Department gate
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="modal-actions">
+        <button class="btn btn-primary btn-full" onclick="closeCheckout()">Confirm order</button>
+      </div>
+    </div>
+  </div>
+
+  
+  <section>
+    <div class="cart-wrap">
+
+      <h1 class="page-title">Your cart</h1>
+      <p class="page-sub">Review items before contacting sellers</p>
+
+      
+      <div id="cartContent"></div>
+
+    </div>
+  </section>
+
+  
+  <footer>
+    <div class="container">
+      <p>CampusCart &copy; 2024</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/cart.js"></script>
+  <script>
+    
+    window.addEventListener("load", function() {
+      initCart();
+    });
+  </script>
+
+</body>
+</html>

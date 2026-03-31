@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Item Detail — CampusCart</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="toast"></div>
+
+  
+  <nav id="navAuth"></nav>
+
+  
+  <section>
+    <div class="detail-wrap">
+
+      <a class="btn btn-secondary btn-sm mb-2" href="browse.html">&larr; Back to browse</a>
+
+      
+      <article class="detail-grid">
+
+        
+        <div>
+          <div class="detail-img" id="detailImg">&#128230;</div>
+          <div style="margin-top:0.75rem" id="detailTags"></div>
+        </div>
+
+        
+        <div>
+          <div id="detailSoldBadge"></div>
+          <div class="detail-title" id="detailTitle">Loading...</div>
+          <div class="detail-price" id="detailPrice"></div>
+
+          
+          <p class="detail-desc" id="detailDesc"></p>
+
+          
+          <div class="seller-box">
+            <div class="seller-avatar" id="detailSellerAvatar">?</div>
+            <div>
+              <div style="font-size:0.85rem;font-weight:500;color:var(--text)" id="detailSellerName"></div>
+              <div class="text-muted" style="font-size:0.78rem" id="detailSellerDept"></div>
+            </div>
+          </div>
+
+          
+          <div style="display:flex;gap:0.75rem;flex-wrap:wrap" id="detailActions"></div>
+
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  
+  <footer>
+    <div class="container">
+      <p>CampusCart &copy; 2024</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/detail.js"></script>
+  <script>
+    window.addEventListener("load", function() {
+      initDetail();
+    });
+  </script>
+
+</body>
+</html>

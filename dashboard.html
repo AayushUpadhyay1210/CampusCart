@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — CampusCart</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="toast"></div>
+
+  
+  <nav id="navAuth"></nav>
+
+  
+  <header class="dash-header">
+    <div class="container">
+      <div id="dashGreet" class="dash-title">Welcome!</div>
+      <div class="dash-subtitle">Here's what's happening on CampusCart today</div>
+    </div>
+  </header>
+
+  
+  <section class="section">
+    <div class="container">
+
+      
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-card-num" id="statActive">0</div>
+          <div class="stat-card-label">Active listings</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-num" id="statMine">0</div>
+          <div class="stat-card-label">My posted items</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-num" id="statCart">0</div>
+          <div class="stat-card-label">Cart items</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-num" id="statValue">Rs. 0</div>
+          <div class="stat-card-label">Cart value</div>
+        </div>
+      </div>
+
+      
+      <div class="dash-grid">
+
+        
+        <div>
+          <h3>Sales activity (last 7 days)</h3>
+          <canvas id="salesChart" width="400" height="180"></canvas>
+        </div>
+
+        
+        <aside class="recent-panel">
+          <h3>Recent listings</h3>
+          <div id="recentListings"></div>
+        </aside>
+
+      </div>
+
+      
+      <div class="text-center" style="margin-top:2rem">
+        <a class="btn btn-primary" href="post.html">+ Post a new item</a>
+        &nbsp;
+        <a class="btn btn-secondary" href="browse.html">Browse listings</a>
+      </div>
+
+    </div>
+  </section>
+
+  
+  <footer>
+    <div class="container">
+      <p>CampusCart &copy; 2024</p>
+    </div>
+  </footer>
+
+  
+  <script src="js/data.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script>
+    
+    window.addEventListener("load", function() {
+      initDashboard();
+    });
+  </script>
+
+</body>
+</html>

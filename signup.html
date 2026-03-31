@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up — CampusCart</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="toast"></div>
+
+  
+  <nav>
+    <a class="nav-logo" href="index.html">Campus<span>Cart</span></a>
+    <div class="nav-links">
+      <a class="nav-btn" href="browse.html">Browse</a>
+      <a class="nav-btn" href="login.html">Log in</a>
+    </div>
+  </nav>
+
+  
+  <div class="auth-wrap">
+    <div class="auth-box">
+      <div class="auth-title">Create account</div>
+      <div class="auth-sub">Join your campus marketplace today</div>
+
+      <div id="signupAlert"></div>
+
+      
+      <fieldset>
+        <legend>Personal Info</legend>
+        <div class="form-group">
+          <label for="su-name">Full Name</label>
+          <input type="text" id="su-name" name="fullname" placeholder="Arjun Kumar">
+        </div>
+        <div class="form-group">
+          <label for="su-email">College Email</label>
+          <input type="email" id="su-email" name="email" placeholder="arjun@college.edu.in">
+        </div>
+      </fieldset>
+
+      
+      <fieldset>
+        <legend>Security &amp; Department</legend>
+        <div class="form-group">
+          <label for="su-pass">Password</label>
+          <input type="password" id="su-pass" name="password" placeholder="Min 6 characters">
+        </div>
+        <div class="form-group">
+          <label for="su-dept">Department</label>
+          
+          <select id="su-dept" name="dept" onchange="updateDeptPreview()">
+            <option value="">Select department</option>
+            <option value="Computer Science">Computer Science</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Mechanical">Mechanical</option>
+            <option value="Civil">Civil</option>
+            <option value="MBA">MBA</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+      </fieldset>
+
+      
+      <div id="deptPreview"
+           style="display:none;background-color:#1e1e1e;border:1px solid #2a2a2a;
+                  border-radius:8px;padding:0.6rem 1rem;font-size:0.82rem;
+                  color:#888;margin-bottom:1rem">
+      </div>
+
+      <button class="btn btn-primary btn-full" onclick="doSignup()">Create account</button>
+
+      <div class="auth-switch">
+        Already have an account? <a href="login.html">Log in</a>
+      </div>
+    </div>
+  </div>
+
+  
+  <footer>
+    <div class="container">
+      <p>CampusCart &copy; 2024</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    
+    checkAlreadyLoggedIn();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile — CampusCart</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="toast"></div>
+
+  
+  <nav id="navAuth"></nav>
+
+  
+  <section>
+    <div class="profile-wrap">
+
+      <h1 class="page-title">My Profile</h1>
+      <p class="page-sub">View and update your account details</p>
+
+      
+      <div class="profile-header">
+        <div class="profile-avatar" id="profileAvatar">U</div>
+        <div>
+          <div class="profile-name"  id="profileName">Loading...</div>
+          <div class="profile-email" id="profileEmail"></div>
+          <span class="tag tag-green mt-1" id="profileDept"></span>
+        </div>
+      </div>
+
+      
+      <aside class="profile-section" style="margin-bottom:1rem;">
+        <h3>Account summary</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+          <div class="stat-card">
+            <div class="stat-card-num" id="profileListingCount">0</div>
+            <div class="stat-card-label">My listings</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-num" id="profileSoldCount">0</div>
+            <div class="stat-card-label">Items sold</div>
+          </div>
+        </div>
+      </aside>
+
+      
+      <div class="profile-section">
+        <h3>Edit profile</h3>
+
+        <fieldset>
+          <legend>Personal Details</legend>
+
+          <div class="form-group">
+            <label for="edit-name">Display Name</label>
+            
+            <input type="text" id="edit-name" name="displayname"
+                   placeholder="Your name"
+                   onmouseover="this.style.borderColor='#c8f135'"
+                   onmouseout="if(document.activeElement!=this)this.style.borderColor=''">
+          </div>
+
+          <div class="form-group">
+            <label for="edit-dept">Department</label>
+            
+            <select id="edit-dept" name="dept">
+              <option value="Computer Science">Computer Science</option>
+              <option value="Electronics">Electronics</option>
+              <option value="Mechanical">Mechanical</option>
+              <option value="Civil">Civil</option>
+              <option value="MBA">MBA</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <button class="btn btn-primary btn-sm" onclick="saveProfile()">Save changes</button>
+      </div>
+
+      
+      <div class="profile-section">
+        <h3>Notification preferences</h3>
+        <fieldset>
+          <legend>Notify me when</legend>
+          <div class="inline-check">
+            <input type="checkbox" id="notif-msg" name="notif-msg" checked>
+            <label for="notif-msg" style="text-transform:none;letter-spacing:0;margin:0;color:var(--text)">
+              Someone messages about my listing
+            </label>
+          </div>
+          <div class="inline-check">
+            <input type="checkbox" id="notif-new" name="notif-new">
+            <label for="notif-new" style="text-transform:none;letter-spacing:0;margin:0;color:var(--text)">
+              New listings in my department
+            </label>
+          </div>
+          <div class="inline-check">
+            <input type="checkbox" id="notif-price" name="notif-price">
+            <label for="notif-price" style="text-transform:none;letter-spacing:0;margin:0;color:var(--text)">
+              Price drops on items in my cart
+            </label>
+          </div>
+        </fieldset>
+        <button class="btn btn-secondary btn-sm" onclick="saveNotifPrefs()">Save preferences</button>
+      </div>
+
+      
+      <div class="profile-section" style="border-color:#5a1010;">
+        <h3 style="color:#ff8888;">Account actions</h3>
+        <p class="text-muted mb-2" style="font-size:0.85rem;">
+          Logging out will end your current session.
+        </p>
+        <button class="btn btn-danger btn-full" onclick="doLogout()">Log out</button>
+      </div>
+
+    </div>
+  </section>
+
+  
+  <footer>
+    <div class="container">
+      <p>CampusCart &copy; 2024</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/profile.js"></script>
+  <script>
+    
+    window.addEventListener("load", function() {
+      initProfile();
+    });
+  </script>
+
+</body>
+</html>

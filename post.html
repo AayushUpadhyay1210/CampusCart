@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post Item — CampusCart</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="toast"></div>
+
+  
+  <nav id="navAuth"></nav>
+
+  
+  <section>
+    <div class="post-wrap">
+
+      <h1 class="post-title">List an item</h1>
+      <p class="text-muted mb-3">Fill in the details to post your item for sale</p>
+
+      <div id="postAlert"></div>
+
+      
+      <fieldset>
+        <legend>Item Details</legend>
+
+        <div class="form-group">
+          <label for="p-name">Item Name</label>
+          
+          <input type="text"
+                 id="p-name"
+                 name="itemname"
+                 placeholder="e.g. Engineering Physics Textbook"
+                 oninput="updateEmojiPreview()">
+        </div>
+
+        <div class="form-group">
+          <label for="p-cat">Category</label>
+          
+          <select id="p-cat" name="category" onchange="updateEmojiPreview()">
+            <option value="">Select category</option>
+            <option value="Books">Books</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Clothing">Clothing</option>
+            <option value="Furniture">Furniture</option>
+            <option value="Sports">Sports</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="two-col">
+          <div class="form-group">
+            <label for="p-price">Price (Rs.)</label>
+            <input type="number" id="p-price" name="price" placeholder="500" min="0">
+          </div>
+          <div class="form-group">
+            <label for="p-cond">Condition</label>
+            
+            <select id="p-cond" name="condition">
+              <option value="Like New">Like New</option>
+              <option value="Good">Good</option>
+              <option value="Fair">Fair</option>
+              <option value="For parts">For parts</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="p-desc">Description</label>
+          
+          <textarea id="p-desc"
+                    name="description"
+                    placeholder="Describe your item — edition, age, any defects..."></textarea>
+        </div>
+
+      </fieldset>
+
+      
+      <fieldset>
+        <legend>Item Preview</legend>
+        <div class="image-upload">
+          
+          <span id="emojiPreview">&#128230;</span>
+          <div class="image-upload-text">Icon auto-updates based on category &amp; name</div>
+        </div>
+      </fieldset>
+
+      
+      <fieldset>
+        <legend>Listing Options</legend>
+
+        
+        <div class="inline-check">
+          <input type="checkbox" id="p-nego" name="nego">
+          <label for="p-nego" style="text-transform:none;letter-spacing:0;margin:0;color:var(--text)">
+            Price negotiable
+          </label>
+        </div>
+        <div class="inline-check">
+          <input type="checkbox" id="p-exchange" name="exchange">
+          <label for="p-exchange" style="text-transform:none;letter-spacing:0;margin:0;color:var(--text)">
+            Open to exchange
+          </label>
+        </div>
+      </fieldset>
+
+      <button class="btn btn-primary btn-full" onclick="postItem()">Publish listing</button>
+
+    </div>
+  </section>
+
+  
+  <footer>
+    <div class="container">
+      <p>CampusCart &copy; 2024</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/post.js"></script>
+  <script>
+    window.addEventListener("load", function() {
+      initPost();
+    });
+  </script>
+
+</body>
+</html>
