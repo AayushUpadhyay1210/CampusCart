@@ -51,7 +51,7 @@ var listings = [
     cond: "Good",
     desc: "Solid wood table (3x2 ft) with cushioned chair. Minor scratches. Self-pickup from hostel B.",
     seller: "Ananya R.",
-    sellerDept: "MBA",
+    sellerDept: "Chemical",
     sellerEmail: "ananya@college.edu.in",
     emoji: "🪑",
     sold: false,

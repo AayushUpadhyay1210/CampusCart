@@ -130,7 +130,7 @@ function updateDeptPreview() {
   else if (dept == "Electronics")    tips = "Popular: Lab kits, multimeters, textbooks";
   else if (dept == "Mechanical")     tips = "Popular: Drawing instruments, reference books";
   else if (dept == "Civil")          tips = "Popular: AutoCAD books, measuring tools";
-  else if (dept == "MBA")            tips = "Popular: Case study books, formal wear";
+  else if (dept == "Chemical")            tips = "Popular: Case study books, formal wear";
   else                               tips = "Browse all categories on CampusCart";
 
   el.style.display = "block";
