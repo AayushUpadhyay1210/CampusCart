@@ -18,7 +18,6 @@ function doSignup() {
     return;
   }
 
-  // ✅ Email format validation
   if (!isValidEmail(email)) {
     al.innerHTML = "<div class='alert alert-error'>Please enter a valid email address.</div>";
     return;
@@ -60,7 +59,7 @@ function doLogin() {
     return;
   }
 
-  // ✅ Email format validation
+  
   if (!isValidEmail(email)) {
     al.innerHTML = "<div class='alert alert-error'>Please enter a valid email address.</div>";
     return;
